@@ -13,7 +13,7 @@ it('should check that an array contains a specific value', function () {
 it('should check that an array contains a specific object/array', function () {
   expect([{ foo: 5 }, { foo: 6 }]).toContainEqual({ foo: 6 });
 });
-it('should suppot spies', function () {
+it('should support spies', function () {
   const spy = jest.fn();
   spy('foo');
   expect(spy).toHaveBeenCalledWith('foo');
