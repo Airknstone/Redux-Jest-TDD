@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore } from 'redux'; // Import create store from redux npm i redux
 
 export const IncreaseCount = (amount = 1) => ({
   //This is the Action
