@@ -8,12 +8,12 @@
 //   document.getElementById('root')
 // );
 import store from './store';
-import { addProductToFreezer, updateTemperature } from './actions/freezer';
+import { actions } from './ducks/freezer';
 import { VANILLA } from './constants/flavors';
 
 //add a listener to a store by sbscribing
 store.subscribe(() => console.log(store.getState()));
 
 //dispatch actions
-store.dispatch(updateTemperature(-8));
-store.dispatch(addProductToFreezer(VANILLA, 15));
+store.dispatch(actions.updateTemperature(-8));
+store.dispatch(actions.addProductToFreezer(VANILLA, 15));
