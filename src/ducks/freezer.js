@@ -47,4 +47,13 @@ export const actions = {
       },
     };
   },
+  doSomething() {
+    //example thunk
+    return function (dispatch, getState) {
+      dispatch({
+        type: 'FOO',
+        payload: getState().freezer.temperature,
+      });
+    };
+  },
 };

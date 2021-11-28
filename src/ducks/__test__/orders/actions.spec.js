@@ -44,3 +44,35 @@ describe('placeOrders()', () => {
     expect(action.payload.scoops).toEqual({});
   });
 });
+
+describe('fulfillOrder()', () => {
+  it('should have the right action type', () => {
+    const action = actions.fulfillOrder(5);
+    expect(action.type).toEqual(types.FULFILL_ORDER);
+  });
+  it('should have the ID in the payload', () => {
+    const action = actions.fulfillOrder(5);
+    expect(action.payload).toEqual(5);
+  });
+});
+
+describe('payForOrder()', () => {
+  it('should have the right action type', () => {
+    const action = actions.payForOrder(5);
+    expect(action.type).toEqual(types.PAY_FOR_ORDER);
+  });
+  it('should have the ID in the payload', () => {
+    const action = actions.payForOrder(5);
+    expect(action.payload).toEqual(5);
+  });
+});
+describe('cancelOrder()', () => {
+  it('should have the right action type', () => {
+    const action = actions.cancelOrder(5);
+    expect(action.type).toEqual(types.CANCEL_ORDER);
+  });
+  it('should have the ID in the payload', () => {
+    const action = actions.cancelOrder(5);
+    expect(action.payload).toEqual(5);
+  });
+});
