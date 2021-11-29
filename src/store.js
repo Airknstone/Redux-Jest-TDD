@@ -3,14 +3,17 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { reducer as freezer } from './ducks/freezer';
-import logger from './middleware/logger';
+import { reducer as orders } from './ducks/orders';
+import { reducer as employees } from './ducks/employees';
 
 const rootReducer = combineReducers({
   freezer,
+  orders,
+  employees,
   foo: (state = { hello: 'world' }, action) => state,
 });
 
 export default createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk, logger))
+  composeWithDevTools(applyMiddleware(thunk))
 );
